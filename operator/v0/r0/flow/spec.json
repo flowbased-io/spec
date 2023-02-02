@@ -1,0 +1,13 @@
+{
+  "key": "flow",
+  "name": "Flow Operator",
+  "description": "Flow Operator",
+  "input": {
+    "connectors": {},
+    "allowDynamicConnectors": true
+  },
+  "output": {
+    "connectors": {},
+    "allowDynamicConnectors": true
+  }
+}

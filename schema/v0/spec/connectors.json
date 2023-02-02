@@ -1,0 +1,22 @@
+{
+  "$id": "https://spec.flowbased.io/schema/v0/spec/connectors.json",
+  "title": "Connector Collection Spec",
+  "description": "Connector Spec within Operator Spec",
+  "type": "object",
+  "required": ["connectors"],
+  "properties": {
+    "connectors": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+          "$ref": "https://spec.flowbased.io/schema/v0/spec/connector.json"
+        }
+      },
+      "additionalProperties": false
+    },
+    "allowDynamicConnectors": {
+      "type": "string",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$id": "https://spec.flowbased.io/schema/v0/spec/connector.json",
+  "title": "Connector Spec",
+  "description": "Connector Spec within Connector Collection Spec",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "primary": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

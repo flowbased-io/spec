@@ -1,0 +1,46 @@
+{
+  "$id": "https://spec.flowbased.io/schema/v0/operator.json",
+  "title": "Operator",
+  "description": "Fundamental functional unit of a Flow",
+  "type": "object",
+  "required": [
+    "key",
+    "type",
+    "name",
+    "coord"
+  ],
+  "properties": {
+    "key": {
+      "type": "string",
+      "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+    },
+    "type": {
+      "type": "string",
+      "pattern": "^[a-zA-Z_][a-zA-Z0-9_\/]*$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "coord": {
+      "type": "object",
+      "required": [
+        "x",
+        "y"
+      ],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      }
+    },
+    "config": {
+      "type": "object"
+    },
+    "meta": {
+      "type": "object"
+    }
+  }
+}

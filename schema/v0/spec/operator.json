@@ -1,0 +1,25 @@
+{
+  "$id": "https://spec.flowbased.io/schema/v0/spec/connectors.json",
+  "title": "Operator Spec",
+  "description": "Operator Spec within Operator Repository",
+  "type": "object",
+  "required": ["key", "name"],
+  "properties": {
+    "key": {
+      "type": "string",
+      "pattern": "^[a-zA-Z_][a-zA-Z0-9_\/]*$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "input": {
+      "$ref": "https://spec.flowbased.io/schema/v0/spec/connectors.json"
+    },
+    "output": {
+      "$ref": "https://spec.flowbased.io/schema/v0/spec/connectors.json"
+    }
+  }
+}

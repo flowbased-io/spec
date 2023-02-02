@@ -1,0 +1,13 @@
+{
+  "$id": "https://spec.flowbased.io/spec/operator/v0/r0/flow/config.json",
+  "title": "Flow Operator Configuration",
+  "description": "Flow Operator Configuration Options",
+  "type": "object",
+  "required": ["flow"],
+  "properties": {
+    "flow": {
+      "type": "string",
+      "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+    }
+  }
+}
