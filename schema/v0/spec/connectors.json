@@ -17,7 +17,7 @@
             "additionalProperties": false
         },
         "allowDynamicConnectors": {
-            "type": "string",
+            "type": "boolean",
             "default": false
         }
     }

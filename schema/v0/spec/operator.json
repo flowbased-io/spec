@@ -1,5 +1,5 @@
 {
-    "$id": "https://spec.flowbased.io/schema/v0/spec/connectors.json",
+    "$id": "https://spec.flowbased.io/schema/v0/spec/operator.json",
     "title": "Operator Spec",
     "description": "Operator Spec within Operator Repository",
     "type": "object",

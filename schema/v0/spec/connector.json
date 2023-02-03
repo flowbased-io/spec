@@ -8,6 +8,9 @@
         "primary": {
             "type": "boolean",
             "default": false
+        },
+        "color": {
+            "type": "string"
         }
     }
 }

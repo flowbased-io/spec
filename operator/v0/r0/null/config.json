@@ -1,5 +1,5 @@
 {
-    "$id": "https://spec.flowbased.io/spec/operator/v0/r0/null/config.json",
+    "$id": "https://spec.flowbased.io/operator/v0/r0/null/config.json",
     "title": "Null Operator Configuration",
     "description": "Null Operator Configuration Options",
     "type": "object",
