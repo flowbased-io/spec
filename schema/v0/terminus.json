@@ -1,20 +1,20 @@
 {
-  "$id": "https://spec.flowbased.io/schema/v0/terminus.json",
-  "title": "Terminus",
-  "description": "Designates a specific Connector on a given Operator",
-  "type": "object",
-  "required": [
-    "operator",
-    "connector"
-  ],
-  "properties": {
-    "operator": {
-      "type": "string",
-      "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
-    },
-    "connector": {
-      "type": "string",
-      "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+    "$id": "https://spec.flowbased.io/schema/v0/terminus.json",
+    "title": "Terminus",
+    "description": "Designates a specific Connector on a given Operator",
+    "type": "object",
+    "required": [
+        "operator",
+        "connector"
+    ],
+    "properties": {
+        "operator": {
+            "type": "string",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+        },
+        "connector": {
+            "type": "string",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+        }
     }
-  }
 }

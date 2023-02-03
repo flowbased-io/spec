@@ -1,21 +1,21 @@
 {
-  "key": "nop",
-  "name": "NOP Operator",
-  "description": "No operation Operator",
-  "input": {
-    "connectors": {
-      "input": {
-        "primary": true
-      }
+    "key": "nop",
+    "name": "NOP Operator",
+    "description": "No operation Operator",
+    "input": {
+        "connectors": {
+            "input": {
+                "primary": true
+            }
+        },
+        "allowDynamicConnectors": false
     },
-    "allowDynamicConnectors": false
-  },
-  "output": {
-    "connectors": {
-      "output": {
-        "primary": true
-      }
-    },
-    "allowDynamicConnectors": false
-  }
+    "output": {
+        "connectors": {
+            "output": {
+                "primary": true
+            }
+        },
+        "allowDynamicConnectors": false
+    }
 }

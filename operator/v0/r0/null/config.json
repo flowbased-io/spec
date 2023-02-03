@@ -1,8 +1,8 @@
 {
-  "$id": "https://spec.flowbased.io/spec/operator/v0/r0/null/config.json",
-  "title": "Null Operator Configuration",
-  "description": "Null Operator Configuration Options",
-  "type": "object",
-  "required": [],
-  "additionalProperties": false
+    "$id": "https://spec.flowbased.io/spec/operator/v0/r0/null/config.json",
+    "title": "Null Operator Configuration",
+    "description": "Null Operator Configuration Options",
+    "type": "object",
+    "required": [],
+    "additionalProperties": false
 }

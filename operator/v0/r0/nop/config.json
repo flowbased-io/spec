@@ -1,8 +1,8 @@
 {
-  "$id": "https://spec.flowbased.io/spec/operator/v0/r0/nop/config.json",
-  "title": "NOP Operator Configuration",
-  "description": "NOP Operator Configuration Options",
-  "type": "object",
-  "required": [],
-  "additionalProperties": false
+    "$id": "https://spec.flowbased.io/spec/operator/v0/r0/nop/config.json",
+    "title": "NOP Operator Configuration",
+    "description": "NOP Operator Configuration Options",
+    "type": "object",
+    "required": [],
+    "additionalProperties": false
 }

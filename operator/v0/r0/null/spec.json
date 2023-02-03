@@ -1,5 +1,5 @@
 {
-  "key": "null",
-  "name": "Null Operator",
-  "description": "An Operator without Connectors",
+    "key": "null",
+    "name": "Null Operator",
+    "description": "An Operator without Connectors"
 }

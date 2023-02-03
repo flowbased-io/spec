@@ -1,26 +1,26 @@
 {
-  "$id": "https://spec.flowbased.io/schema/v0/branch.json",
-  "title": "Branch",
-  "description": "Bridge between two Operators via their Termini",
-  "type": "object",
-  "required": [
-    "key",
-    "output",
-    "input"
-  ],
-  "properties": {
-    "key": {
-      "type": "string",
-      "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
-    },
-    "output": {
-      "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
-    },
-    "input": {
-      "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
-    },
-    "meta": {
-      "type": "object"
+    "$id": "https://spec.flowbased.io/schema/v0/branch.json",
+    "title": "Branch",
+    "description": "Bridge between two Operators via their Termini",
+    "type": "object",
+    "required": [
+        "key",
+        "output",
+        "input"
+    ],
+    "properties": {
+        "key": {
+            "type": "string",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+        },
+        "output": {
+            "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
+        },
+        "input": {
+            "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
+        },
+        "meta": {
+            "type": "object"
+        }
     }
-  }
 }

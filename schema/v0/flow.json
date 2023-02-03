@@ -1,55 +1,60 @@
 {
-  "$id": "https://spec.flowbased.io/schema/v0/flow.json",
-  "title": "Flow",
-  "description": "Collection of Operators bridged via Branches",
-  "type": "object",
-  "required": ["key", "name", "operators", "branches"],
-  "properties": {
-    "key": {
-      "type": "string",
-      "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
-    },
-    "name": {
-      "type": "string"
-    },
-    "operators": {
-      "type": "object",
-      "patternProperties": {
-        "^[a-zA-Z_][a-zA-Z0-9_]*$": {
-          "$ref": "https://spec.flowbased.io/schema/v0/operator.json"
+    "$id": "https://spec.flowbased.io/schema/v0/flow.json",
+    "title": "Flow",
+    "description": "Collection of Operators bridged via Branches",
+    "type": "object",
+    "required": [
+        "key",
+        "name",
+        "operators",
+        "branches"
+    ],
+    "properties": {
+        "key": {
+            "type": "string",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+        },
+        "name": {
+            "type": "string"
+        },
+        "operators": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "$ref": "https://spec.flowbased.io/schema/v0/operator.json"
+                }
+            },
+            "additionalProperties": false
+        },
+        "branches": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "$ref": "https://spec.flowbased.io/schema/v0/branch.json"
+                }
+            },
+            "additionalProperties": false
+        },
+        "input": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
+                }
+            },
+            "additionalProperties": false
+        },
+        "output": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
+                }
+            },
+            "additionalProperties": false
+        },
+        "meta": {
+            "type": "object"
         }
-      },
-      "additionalProperties": false
-    },
-    "branches": {
-      "type": "object",
-      "patternProperties": {
-        "^[a-zA-Z_][a-zA-Z0-9_]*$": {
-          "$ref": "https://spec.flowbased.io/schema/v0/branch.json"
-        }
-      },
-      "additionalProperties": false
-    },
-    "input": {
-      "type": "object",
-      "patternProperties": {
-        "^[a-zA-Z_][a-zA-Z0-9_]*$": {
-          "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
-        }
-      },
-      "additionalProperties": false
-    },
-    "output": {
-      "type": "object",
-      "patternProperties": {
-        "^[a-zA-Z_][a-zA-Z0-9_]*$": {
-          "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
-        }
-      },
-      "additionalProperties": false
-    },
-    "meta": {
-      "type": "object"
     }
-  }
 }
