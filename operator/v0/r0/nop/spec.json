@@ -5,6 +5,7 @@
     "input": {
         "connectors": {
             "input": {
+                "label": "Input",
                 "primary": true
             }
         },
@@ -13,6 +14,7 @@
     "output": {
         "connectors": {
             "output": {
+                "label": "Output",
                 "primary": true
             }
         },

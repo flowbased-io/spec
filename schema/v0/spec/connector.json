@@ -5,6 +5,9 @@
     "type": "object",
     "required": [],
     "properties": {
+        "label": {
+            "type": "string"
+        },
         "primary": {
             "type": "boolean",
             "default": false
