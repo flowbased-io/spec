@@ -1,0 +1,301 @@
+{
+    "schema/v0/terminus": {
+        "$id": "https://spec.flowbased.io/schema/v0/terminus.json",
+        "title": "Terminus",
+        "description": "Designates a specific Connector on a given Operator",
+        "type": "object",
+        "required": [
+            "operator",
+            "connector"
+        ],
+        "properties": {
+            "operator": {
+                "type": "string",
+                "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+            },
+            "connector": {
+                "type": "string",
+                "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+            }
+        }
+    },
+    "schema/v0/flow": {
+        "$id": "https://spec.flowbased.io/schema/v0/flow.json",
+        "title": "Flow",
+        "description": "Collection of Operators bridged via Branches",
+        "type": "object",
+        "required": [
+            "key",
+            "name",
+            "operators",
+            "branches"
+        ],
+        "properties": {
+            "key": {
+                "type": "string",
+                "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+            },
+            "name": {
+                "type": "string"
+            },
+            "orientation": {
+                "type": "string",
+                "default": "horizontal"
+            },
+            "operators": {
+                "type": "object",
+                "patternProperties": {
+                    "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+                        "$ref": "https://spec.flowbased.io/schema/v0/operator.json"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "branches": {
+                "type": "object",
+                "patternProperties": {
+                    "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+                        "$ref": "https://spec.flowbased.io/schema/v0/branch.json"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "input": {
+                "type": "object",
+                "patternProperties": {
+                    "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+                        "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "output": {
+                "type": "object",
+                "patternProperties": {
+                    "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+                        "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "meta": {
+                "type": "object"
+            }
+        }
+    },
+    "schema/v0/branch": {
+        "$id": "https://spec.flowbased.io/schema/v0/branch.json",
+        "title": "Branch",
+        "description": "Bridge between two Operators via their Termini",
+        "type": "object",
+        "required": [
+            "key",
+            "output",
+            "input"
+        ],
+        "properties": {
+            "key": {
+                "type": "string",
+                "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+            },
+            "output": {
+                "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
+            },
+            "input": {
+                "$ref": "https://spec.flowbased.io/schema/v0/terminus.json"
+            },
+            "meta": {
+                "type": "object"
+            }
+        }
+    },
+    "schema/v0/operator": {
+        "$id": "https://spec.flowbased.io/schema/v0/operator.json",
+        "title": "Operator",
+        "description": "Fundamental functional unit of a Flow",
+        "type": "object",
+        "required": [
+            "key",
+            "type",
+            "name",
+            "coord"
+        ],
+        "properties": {
+            "key": {
+                "type": "string",
+                "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+            },
+            "type": {
+                "type": "string",
+                "pattern": "^[a-zA-Z_][a-zA-Z0-9_/]*$"
+            },
+            "name": {
+                "type": "string"
+            },
+            "coord": {
+                "type": "object",
+                "required": [
+                    "x",
+                    "y"
+                ],
+                "properties": {
+                    "x": {
+                        "type": "number"
+                    },
+                    "y": {
+                        "type": "number"
+                    }
+                }
+            },
+            "config": {
+                "type": "object"
+            },
+            "meta": {
+                "type": "object"
+            }
+        }
+    },
+    "schema/v0/spec/connector": {
+        "$id": "https://spec.flowbased.io/schema/v0/spec/connector.json",
+        "title": "Connector Spec",
+        "description": "Connector Spec within Connector Collection Spec",
+        "type": "object",
+        "required": [],
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "primary": {
+                "type": "boolean",
+                "default": false
+            },
+            "color": {
+                "type": "string"
+            }
+        }
+    },
+    "schema/v0/spec/operator": {
+        "$id": "https://spec.flowbased.io/schema/v0/spec/operator.json",
+        "title": "Operator Spec",
+        "description": "Operator Spec within Operator Repository",
+        "type": "object",
+        "required": [
+            "key",
+            "name"
+        ],
+        "properties": {
+            "key": {
+                "type": "string",
+                "pattern": "^[a-zA-Z_][a-zA-Z0-9_/]*$"
+            },
+            "name": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            },
+            "input": {
+                "$ref": "https://spec.flowbased.io/schema/v0/spec/connectors.json"
+            },
+            "output": {
+                "$ref": "https://spec.flowbased.io/schema/v0/spec/connectors.json"
+            }
+        }
+    },
+    "schema/v0/spec/connectors": {
+        "$id": "https://spec.flowbased.io/schema/v0/spec/connectors.json",
+        "title": "Connector Collection Spec",
+        "description": "Connector Spec within Operator Spec",
+        "type": "object",
+        "required": [
+            "connectors"
+        ],
+        "properties": {
+            "connectors": {
+                "type": "object",
+                "patternProperties": {
+                    "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+                        "$ref": "https://spec.flowbased.io/schema/v0/spec/connector.json"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "allowDynamicConnectors": {
+                "type": "boolean",
+                "default": false
+            }
+        }
+    },
+    "operator/v0/r0/nop/config": {
+        "$id": "https://spec.flowbased.io/operator/v0/r0/nop/config.json",
+        "title": "NOP Operator Configuration",
+        "description": "NOP Operator Configuration Options",
+        "type": "object",
+        "required": [],
+        "additionalProperties": false
+    },
+    "operator/v0/r0/nop/spec": {
+        "key": "nop",
+        "name": "NOP Operator",
+        "description": "No operation Operator",
+        "input": {
+            "connectors": {
+                "input": {
+                    "name": "Input",
+                    "primary": true
+                }
+            },
+            "allowDynamicConnectors": false
+        },
+        "output": {
+            "connectors": {
+                "output": {
+                    "name": "Output",
+                    "primary": true
+                }
+            },
+            "allowDynamicConnectors": false
+        }
+    },
+    "operator/v0/r0/flow/config": {
+        "$id": "https://spec.flowbased.io/operator/v0/r0/flow/config.json",
+        "title": "Flow Operator Configuration",
+        "description": "Flow Operator Configuration Options",
+        "type": "object",
+        "required": [
+            "flow"
+        ],
+        "properties": {
+            "flow": {
+                "type": "string",
+                "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+            }
+        }
+    },
+    "operator/v0/r0/flow/spec": {
+        "key": "flow",
+        "name": "Flow Operator",
+        "description": "Flow Operator",
+        "input": {
+            "connectors": {},
+            "allowDynamicConnectors": true
+        },
+        "output": {
+            "connectors": {},
+            "allowDynamicConnectors": true
+        }
+    },
+    "operator/v0/r0/null/config": {
+        "$id": "https://spec.flowbased.io/operator/v0/r0/null/config.json",
+        "title": "Null Operator Configuration",
+        "description": "Null Operator Configuration Options",
+        "type": "object",
+        "required": [],
+        "additionalProperties": false
+    },
+    "operator/v0/r0/null/spec": {
+        "key": "null",
+        "name": "Null Operator",
+        "description": "An Operator without Connectors"
+    }
+}
