@@ -1,6 +1,6 @@
 {
-  "name": "flowbased/spec",
-  "description": "flowbased/spec",
+  "name": "spec",
+  "description": "spec",
   "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {}
