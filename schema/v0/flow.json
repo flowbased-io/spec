@@ -17,6 +17,10 @@
         "name": {
             "type": "string"
         },
+        "orientation": {
+            "type": "string",
+            "default": "horizontal"
+        },
         "operators": {
             "type": "object",
             "patternProperties": {
